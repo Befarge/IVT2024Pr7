@@ -1,0 +1,16 @@
+[
+{
+  "directory": "/Users/ghost/Desktop/IVT2024Pr7",
+  "arguments": ["/Library/Developer/CommandLineTools/usr/bin/clang", "-c", "-Qunused-arguments", "-isysroot", "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk", "-std=c++11", "-o", "build/.objs/example_lib/macosx/arm64/release/src/test.cpp.o", "src/test.cpp"],
+  "file": "src/test.cpp"
+},
+{
+  "directory": "/Users/ghost/Desktop/IVT2024Pr7",
+  "arguments": ["/Library/Developer/CommandLineTools/usr/bin/clang", "-c", "-Qunused-arguments", "-isysroot", "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk", "-std=c++11", "-o", "build/.objs/example_lib/macosx/arm64/release/src/Shape.cpp.o", "src/Shape.cpp"],
+  "file": "src/Shape.cpp"
+},
+{
+  "directory": "/Users/ghost/Desktop/IVT2024Pr7",
+  "arguments": ["/Library/Developer/CommandLineTools/usr/bin/clang", "-c", "-Qunused-arguments", "-isysroot", "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk", "-std=c++11", "-o", "build/.objs/example_lib/macosx/arm64/release/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
+}]
