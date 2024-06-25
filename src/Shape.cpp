@@ -16,8 +16,8 @@ Point3D::Point3D(double x, double y, double z){
 }
 
 bool sort_compare(Point2D p1, Point2D p2){
-    double move_y = std::min_element(begin(vertex), end(vertex), min_compare)->y;
-    return atan2(p1.y + move_y, p1.x) < atan2(p2.y + move_y, p2.x);
+    //double move_y = std::min_element(begin(vertex), end(vertex), min_compare)->y;
+    //return atan2(p1.y + move_y, p1.x) < atan2(p2.y + move_y, p2.x);
 }
 
 bool min_compare(Point2D p1, Point2D p2){
