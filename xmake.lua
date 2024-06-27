@@ -1,4 +1,5 @@
 target("example_lib")
     set_kind("binary")
     add_files("src/*.cpp")
+    add_includedirs("include")
     set_languages("cxx11")
