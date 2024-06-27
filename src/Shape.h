@@ -19,8 +19,8 @@ struct Point3D{
 
 class Shape2D{
     private:
-        friend bool min_compare(Point2D, Point2D);
-        friend bool sort_compare(Point2D, Point2D, std::vector<Point2D>);
+        bool min_compare(Point2D, Point2D);
+        bool sort_compare(Point2D, Point2D, std::vector<Point2D>);
     protected:
         std::vector<Point2D> sort(std::vector<Point2D>);
     public:
