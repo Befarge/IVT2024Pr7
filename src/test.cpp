@@ -18,7 +18,6 @@ class Cube : public ShapeInterface {
 public:
     Cube(double side) {
         this->side = side;
-        
     }
 
     // Setters

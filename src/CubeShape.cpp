@@ -27,6 +27,6 @@ std::vector<Vector3D> CubeShape::getVertices() {
     
 }
 
-std::vector<double> CubeShape::getEdges() {
+std::vector<Face> CubeShape::getFaces() {
     
 }

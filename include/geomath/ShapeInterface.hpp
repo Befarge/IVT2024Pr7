@@ -1,4 +1,7 @@
-#include "Vector.hpp"
+#pragma once
+
+#include "types/Vector.hpp"
+#include "types/Face.hpp"
 
 #include <vector>
 
@@ -8,5 +11,5 @@ public:
     virtual double getVolume() = 0;
     
     virtual std::vector<Vector3D> getVertices() = 0;
-    virtual std::vector<double> getEdges() = 0;
+    virtual std::vector<Face> getFaces() = 0;
 };

@@ -1,9 +1,11 @@
+#pragma once
+
 #include "ShapeInterface.hpp"
 
-class CubeShape : public ShapeInterface {
+class PrismShape : public ShapeInterface {
     double side;
 public:
-    CubeShape(double side);
+    PrismShape(double side);
     
     // Setters
     void setSide(double side);
@@ -15,5 +17,5 @@ public:
     double getSurfaceArea() override;
     double getVolume() override;
     std::vector<Vector3D> getVertices() override;
-    std::vector<double> getEdges() override;
+    std::vector<Face> getFaces() override;
 };
