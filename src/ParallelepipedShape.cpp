@@ -39,17 +39,13 @@ Vector2DXZ ParallelepipedShape::getTopOffset() {
 
 
 double ParallelepipedShape::getSurfaceArea() {
-    
+    // TODO: Добавить тело функции
 }
 
 double ParallelepipedShape::getVolume() {
-    
-}
-
-std::vector<Vector3D> ParallelepipedShape::getVertices() {
-    
+    // TODO: Добавить тело функции
 }
 
 std::vector<Face> ParallelepipedShape::getFaces() {
-    
+    // TODO: Добавить тело функции
 }

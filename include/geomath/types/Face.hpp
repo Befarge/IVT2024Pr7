@@ -7,7 +7,8 @@
 class Face {
     std::vector<Vector3D> vertices;
 public:
-    Face();
+    Face(std::vector<Vector3D> vertices);
     
+    double getArea();
     // TODO: Добавить метод для расчёта площади 
 };

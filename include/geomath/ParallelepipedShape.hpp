@@ -30,6 +30,5 @@ public:
     // ShapeInterface implementation
     double getSurfaceArea() override;
     double getVolume() override;
-    std::vector<Vector3D> getVertices() override;
     std::vector<Face> getFaces() override;
 };

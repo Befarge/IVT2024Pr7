@@ -1,21 +1,46 @@
 #pragma once
 
+#include <cstdint>
 #include "ShapeInterface.hpp"
 
 class PrismShape : public ShapeInterface {
-    double side;
+    uint32_t segment_n;
+    double radius;
+    double height;
+    Vector2DXZ offset;
+    bool is_custom_vertices;
+    std::vector<Vector2DXZ> custom_vertices;
 public:
-    PrismShape(double side);
+    PrismShape(
+        uint32_t segment_n = 4,
+        double radius = 1,
+        double height = 1,
+        Vector2DXZ offset = {0, 0}
+    );
+    PrismShape(
+        std::vector<Vector2DXZ> vertices = {
+            {-0.5, 0.5}, {0.5, 0.5}, {0.5, -0.5}, {-0.5, -0.5} 
+        },
+        double height = 1,
+        Vector2DXZ offset = {0, 0}
+    );
     
     // Setters
-    void setSide(double side);
+    void setSegmentNumber(uint32_t segment_n);
+    void setBaseVertices(std::vector<Vector2DXZ> vertices);
+    void setRadius(double radius);
+    void setHeight(double height);
+    void setOffset(Vector2DXZ offset);
     
     // Getters
-    double getSide();
+    uint32_t getSegmentNumber();
+    std::vector<Vector2DXZ> getBaseVertices();
+    double getRadius();
+    double getHeight();
+    Vector2DXZ getOffset();
     
     // ShapeInterface implementation
     double getSurfaceArea() override;
     double getVolume() override;
-    std::vector<Vector3D> getVertices() override;
     std::vector<Face> getFaces() override;
 };
