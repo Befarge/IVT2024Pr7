@@ -1,12 +1,14 @@
 #include <geomath/ParallelepipedShape.hpp>
+#include <cmath>
 
 ParallelepipedShape::ParallelepipedShape(
-    double length, double width, double height, Vector2DXZ top_offset
+    double length, double width, double height, double alpha, Vector2DXZ top_offset
 ) {
     this->setLength(length);
     this->setWidth(width);
     this->setHeight(height);
     this->setTopOffset(top_offset);
+    this->setAlpha(alpha);
 }
 
 // Setters
@@ -22,6 +24,9 @@ void ParallelepipedShape::setHeight(double height) {
 void ParallelepipedShape::setTopOffset(Vector2DXZ offset) {
     this->top_offset = offset;
 }
+void ParallelepipedShape::setAlpha(double alpha){
+    this->alpha = alpha;
+}
 
 // Getters
 double ParallelepipedShape::getLenght() {
@@ -33,6 +38,9 @@ double ParallelepipedShape::getWidth() {
 double ParallelepipedShape::getHeight() {
     return this->height;
 }
+double ParallelepipedShape::getAlpha(){
+    return alpha;
+}
 Vector2DXZ ParallelepipedShape::getTopOffset() {
     return this->top_offset;
 }
@@ -40,12 +48,22 @@ Vector2DXZ ParallelepipedShape::getTopOffset() {
 
 double ParallelepipedShape::getSurfaceArea() {
     // TODO: Добавить тело функции
+    Face base = this->getFaces()[0];
+    return height * base.getPerimetr() + 2 * base.getArea();
 }
 
 double ParallelepipedShape::getVolume() {
     // TODO: Добавить тело функции
+    Face base = this->getFaces()[0];
+    return base.getArea() * height;
 }
 
 std::vector<Face> ParallelepipedShape::getFaces() {
     // TODO: Добавить тело функции
+    // TODO: Генерация как на кубе (ручками)
+    double x = this->length / 2;
+    double z = this->width / 2;
+    double move = 1/tan(alpha) * width; 
+
+    
 }

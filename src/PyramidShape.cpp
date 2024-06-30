@@ -76,12 +76,13 @@ Vector2DXZ PyramidShape::getOffset(){
 
 double PyramidShape::getSurfaceArea() {
     // TODO: Добавить тело функции
-    if (this->is_custom_vertices) {
-        
+    std::vector<Face> kit = this->getFaces();
+    double area = 0;
+
+    for(int i = 0; i < kit.size(); i++){
+        area += kit[i].getArea();
     }
-    else {
-        // Radius mode
-    }
+
 }
 
 double PyramidShape::getVolume() {

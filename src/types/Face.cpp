@@ -1,19 +1,32 @@
 #include <cmath>
 #include <geomath/types/Face.hpp>
+#include <vector>
 
 Face::Face(std::vector<Vector3D> vertices) {
     this->vertices3D = vertices;
-    this->is_3D_vertices = true;
+    this->is_vertices3D = true;
 }
 
-Face::Face(std::vector<Vector2DXZ> vertices) {
-    this->vertices2DXZ = vertices;
-    this->is_3D_vertices = false;
+Face::Face(std::vector<Vector2DXZ> base){
+    for(int i = 0; i < base.size(); i++){
+        vertices3D.push_back({base[i].x, 0, base[i].z});
+    }
+    this->is_vertices3D = false;
+}
+
+Face::Face(){ }
+
+void Face::add_Vector3D(Vector3D p){
+    vertices3D.push_back(p);
+}
+
+std::vector<Vector3D> Face::getVertices(){
+    return vertices3D;
 }
 
 double Face::getArea() {
     double area;
-    if(is_3D_vertices){
+    if(is_vertices3D){
         Vector3D A = vertices3D[0];
         Vector3D B = vertices3D[1];
         Vector3D C = vertices3D[2];
@@ -24,26 +37,25 @@ double Face::getArea() {
         double P = (AB + AC + BC) / 2;
         
         area = pow(P * (P - AB) * (P - AC) * (P - BC), 0.5);
-
-        if(vertices3D.size() == 4){
-            area *= 2;
-        }
     }   
     else{
-        for(int i = 0, size = vertices2DXZ.size(); i < size; i++){
-            area += 0.5 * (vertices2DXZ[i].x * vertices2DXZ[(i + 1) & size].z - vertices2DXZ[i].z * vertices2DXZ[(i + 1) % size].x);
+        for(int i = 0, size = vertices3D.size(); i < size; i++){
+            area += 0.5 * (vertices3D[i].x * vertices3D[(i + 1) & size].z - vertices3D[i].z * vertices3D[(i + 1) % size].x);
         }
     }
     return area;
 }
 
 double Face::getPerimetr(){
-    if(!is_3D_vertices){
-        double perimetr;
-        for(int i = 0, size = vertices2DXZ.size(); i < size; i++){
-            perimetr += pow(pow(vertices2DXZ[i].x - vertices2DXZ[(i + 1) % size].x, 2) + pow(vertices2DXZ[i].z - vertices2DXZ[(i + 1) % size].z, 2), 0.5);
-        }
-        return perimetr; 
+    double perimetr;
+
+    for(int i = 0, size = vertices3D.size(); i < size; i++){
+        double delta_x = vertices3D[(i + 1) % size].x - vertices3D[i].x;
+        double delta_y = vertices3D[(i + 1) % size].y - vertices3D[i].y;
+        double delta_z = vertices3D[(i + 1) % size].z - vertices3D[i].z;
+
+        perimetr += pow(pow(delta_x, 2) + pow(delta_y, 2) + pow(delta_z, 2), 0.5);
     }
-    abort();
+
+    return perimetr;
 }
