@@ -76,12 +76,15 @@ Vector2DXZ PrismShape::getOffset(){
 
 double PrismShape::getSurfaceArea() {
     // TODO: Добавить тело функции
-    if (this->is_custom_vertices) {
-        
-    }
-    else {
-        // Radius mode
-    }
+    double perimetr;
+    double area;
+
+    if (this->is_custom_vertices)
+        Face base = Face(custom_vertices);
+    else //Radius mode
+        Face face(this->getFaces()[0]);
+
+    return 2 * area +  perimetr * height;
 }
 
 double PrismShape::getVolume() {

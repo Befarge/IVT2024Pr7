@@ -2,8 +2,8 @@
 #include <iostream>
 
 int main() {
-    CubeShape cube(10);
-    
-    std::cout << "Area: " << cube.getSurfaceArea() << "\n";
-    std::cout << "Volume: " << cube.getVolume() << "\n";
-}
+    std::vector<Vector2DXZ> kit;
+    Face obj(kit);
+    //std::cout << obj.getArea();
+
+}   

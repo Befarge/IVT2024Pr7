@@ -26,17 +26,12 @@ double CubeShape::getVolume() {
 
 std::vector<Face> CubeShape::getFaces() {
     double hs = this->side / 2;
-    std::vector<Vector3D> front = {
-        {-hs, -hs, hs},
-        { hs, -hs, hs},
-        { hs,  hs, hs},
-        {-hs,  hs, hs}
-    };
-    Face f(front);
-    return {
-        
+    std::vector<Vector3D> ptr = {{1,2,3}, {2,4,5}};
+    std::vector<Face> obj;
+    return obj;
+    /*return {
         // Передняя
-        /*Face({
+        Face({
             {-hs, -hs, hs},
             { hs, -hs, hs},
             { hs,  hs, hs},
@@ -76,6 +71,6 @@ std::vector<Face> CubeShape::getFaces() {
             { hs, hs,  hs},
             { hs, hs, -hs},
             {-hs, hs, -hs}
-        })*/
-    };
+        })};
+        */
 }
