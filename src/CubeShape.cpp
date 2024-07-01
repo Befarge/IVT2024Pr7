@@ -1,4 +1,3 @@
-#include "geomath/types/Vector.hpp"
 #include <geomath/CubeShape.hpp>
 #include <vector>
 
@@ -27,9 +26,9 @@ double CubeShape::getVolume() {
 std::vector<Face> CubeShape::getFaces() {
     double hs = this->side / 2;
     
-    std::vector<Face> obj;
-    return obj;
-    /*return {
+    //std::vector<Face> obj;
+    //return obj;
+    return {
         // Передняя
         Face({
             {-hs, -hs, hs},
@@ -71,6 +70,6 @@ std::vector<Face> CubeShape::getFaces() {
             { hs, hs,  hs},
             { hs, hs, -hs},
             {-hs, hs, -hs}
-        })};
-        */
+        })
+    };    
 }

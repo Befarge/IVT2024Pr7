@@ -16,7 +16,7 @@ Face::Face(std::vector<Vector2DXZ> base){
 
 Face::Face(){ }
 
-void Face::add_Vector3D(Vector3D p){
+void Face::addVertex(Vector3D p){
     vertices3D.push_back(p);
 }
 
@@ -25,18 +25,21 @@ std::vector<Vector3D> Face::getVertices(){
 }
 
 double Face::getArea() {
+    // FIXME: GOVNO
     double area;
     if(is_vertices3D){
         Vector3D A = vertices3D[0];
         Vector3D B = vertices3D[1];
         Vector3D C = vertices3D[2];
         
-        double AB = pow(pow(B.x - A.x, 2) + pow(B.y - A.x, 2) + pow(B.z - A.z, 2), 0.5);
+        double AB = pow(pow(B.x - A.x, 2) + pow(B.y - A.y, 2) + pow(B.z - A.z, 2), 0.5);
         double AC = pow(pow(C.x - A.x, 2) + pow(C.y - A.y, 2) + pow(C.z - A.z, 2), 0.5);
         double BC = pow(pow(C.x - B.x, 2) + pow(C.y - B.y, 2) + pow(C.z - B.z, 2), 0.5);
         double P = (AB + AC + BC) / 2;
         
         area = pow(P * (P - AB) * (P - AC) * (P - BC), 0.5);
+        if (this->vertices3D.size() == 4)
+            area *= 2;
     }   
     else{
         for(int i = 0, size = vertices3D.size(); i < size; i++){

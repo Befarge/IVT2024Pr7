@@ -47,13 +47,11 @@ Vector2DXZ ParallelepipedShape::getTopOffset() {
 
 
 double ParallelepipedShape::getSurfaceArea() {
-    // TODO: Добавить тело функции
     Face base = this->getFaces()[0];
     return height * base.getPerimetr() + 2 * base.getArea();
 }
 
 double ParallelepipedShape::getVolume() {
-    // TODO: Добавить тело функции
     Face base = this->getFaces()[0];
     return base.getArea() * height;
 }

@@ -15,7 +15,7 @@ public:
 
     double getArea();
     std::vector<Vector3D> getVertices();
-    void add_Vector3D(Vector3D);
+    void addVertex(Vector3D vertex);
     double getPerimetr();
     // TODO: Добавить метод для расчёта площади 
 };

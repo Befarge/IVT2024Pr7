@@ -1,36 +1,36 @@
 [
 {
   "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++11", "-Iinclude", "-o", "build/.objs/example_lib/linux/x86_64/release/src/CubeShape.cpp.o", "src/CubeShape.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-Iinclude", "-o", "build/.objs/test_1/linux/x86_64/release/tests/test_1.cpp.o", "tests/test_1.cpp"],
+  "file": "tests/test_1.cpp"
+},
+{
+  "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Ofast", "-std=c++11", "-Iinclude", "-o", "build/.objs/geomath-static/linux/x86_64/release/src/types/Face.cpp.o", "src/types/Face.cpp"],
+  "file": "src/types/Face.cpp"
+},
+{
+  "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Ofast", "-std=c++11", "-Iinclude", "-o", "build/.objs/geomath-static/linux/x86_64/release/src/CubeShape.cpp.o", "src/CubeShape.cpp"],
   "file": "src/CubeShape.cpp"
 },
 {
   "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++11", "-Iinclude", "-o", "build/.objs/example_lib/linux/x86_64/release/src/PrismShape.cpp.o", "src/PrismShape.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Ofast", "-std=c++11", "-Iinclude", "-o", "build/.objs/geomath-static/linux/x86_64/release/src/ParallelepipedShape.cpp.o", "src/ParallelepipedShape.cpp"],
+  "file": "src/ParallelepipedShape.cpp"
+},
+{
+  "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Ofast", "-std=c++11", "-Iinclude", "-o", "build/.objs/geomath-static/linux/x86_64/release/src/PrismShape.cpp.o", "src/PrismShape.cpp"],
   "file": "src/PrismShape.cpp"
 },
 {
   "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++11", "-Iinclude", "-o", "build/.objs/example_lib/linux/x86_64/release/src/PyramidShape.cpp.o", "src/PyramidShape.cpp"],
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-Ofast", "-std=c++11", "-Iinclude", "-o", "build/.objs/geomath-static/linux/x86_64/release/src/PyramidShape.cpp.o", "src/PyramidShape.cpp"],
   "file": "src/PyramidShape.cpp"
 },
 {
   "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++11", "-Iinclude", "-o", "build/.objs/example_lib/linux/x86_64/release/src/Shape.cpp.o", "src/Shape.cpp"],
-  "file": "src/Shape.cpp"
-},
-{
-  "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++11", "-Iinclude", "-o", "build/.objs/example_lib/linux/x86_64/release/src/probnik.cpp.o", "src/probnik.cpp"],
-  "file": "src/probnik.cpp"
-},
-{
-  "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++11", "-Iinclude", "-o", "build/.objs/example_lib/linux/x86_64/release/src/test.cpp.o", "src/test.cpp"],
-  "file": "src/test.cpp"
-},
-{
-  "directory": "/home/ghost/Desktop/EvegeniyCPPLib",
-  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++11", "-Iinclude", "-o", "build/.objs/example_lib/linux/x86_64/release/src/ParallelepipedShape.cpp.o", "src/ParallelepipedShape.cpp"],
-  "file": "src/ParallelepipedShape.cpp"
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-std=c++11", "-Iinclude", "-o", "build/.objs/dev/linux/x86_64/release/examples/dev.cpp.o", "examples/dev.cpp"],
+  "file": "examples/dev.cpp"
 }]

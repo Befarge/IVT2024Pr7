@@ -1,6 +1,7 @@
 #include <geomath/PrismShape.hpp>
 #include <vector>
 #include <iostream>
+#include <cmath>
 
 PrismShape::PrismShape(
     uint32_t segment_n, double radius,
@@ -85,7 +86,7 @@ double PrismShape::getSurfaceArea() {
     double perimetr = base.getPerimetr();
     double area = base.getArea();
 
-    return 2 * area +  perimetr * height;
+    return 2 * area + perimetr * height;
 }
 
 double PrismShape::getVolume() {
@@ -106,23 +107,24 @@ std::vector<Face> PrismShape::getFaces() {
     if (this->is_custom_vertices) {
         kit.resize(custom_vertices.size() + 2);
         
-        for(int i = 0, size = custom_vertices.size(), prev_index = size + 1, next_index = 2; i < size; i++,
-            prev_index = 2 + (i + size - 1) % size,
-            next_index = 2 + (i + size) % size){
-                
+        for (
+            int i = 0, size = custom_vertices.size(), prev_index = size + 1, next_index = 2;
+            i < size; 
+            i++, prev_index = 2 + (i + size - 1) % size, next_index = 2 + (i + size) % size)
+        { 
             double x = custom_vertices[i].x;
             double z = custom_vertices[i].z;
 
             Vector3D up_point{x + offset.x,height,z + offset.z};
             Vector3D down_point{x, 0, z};
 
-            kit[0].add_Vector3D(down_point);
-            kit[1].add_Vector3D(up_point);
-            kit[prev_index].add_Vector3D(down_point);
-            kit[prev_index].add_Vector3D(up_point);
-            kit[next_index].add_Vector3D(down_point);
-            kit[next_index].add_Vector3D(up_point);
-            } 
+            kit[0].addVertex(down_point);
+            kit[1].addVertex(up_point);
+            kit[prev_index].addVertex(down_point);
+            kit[prev_index].addVertex(up_point);
+            kit[next_index].addVertex(down_point);
+            kit[next_index].addVertex(up_point);
+        } 
     }
     else {
         // Radius mode
@@ -139,12 +141,12 @@ std::vector<Face> PrismShape::getFaces() {
             Vector3D up_point{x + offset.x,height,z + offset.z};
             Vector3D down_point{x, 0, z};
 
-            kit[0].add_Vector3D(down_point);
-            kit[1].add_Vector3D(up_point);
-            kit[prev_index].add_Vector3D(down_point);
-            kit[prev_index].add_Vector3D(up_point);
-            kit[next_index].add_Vector3D(down_point);
-            kit[next_index].add_Vector3D(up_point);
+            kit[0].addVertex(down_point);
+            kit[1].addVertex(up_point);
+            kit[prev_index].addVertex(down_point);
+            kit[prev_index].addVertex(up_point);
+            kit[next_index].addVertex(down_point);
+            kit[next_index].addVertex(up_point);
         }
     }
     return kit;
