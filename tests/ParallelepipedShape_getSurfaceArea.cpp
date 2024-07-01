@@ -1,4 +1,3 @@
-#include "geomath/ParallelepipedShape.hpp"
 #include "unit_test.hpp"
 
 int main() {

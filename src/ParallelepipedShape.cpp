@@ -57,11 +57,54 @@ double ParallelepipedShape::getVolume() {
 }
 
 std::vector<Face> ParallelepipedShape::getFaces() {
-    // TODO: Добавить тело функции
-    // TODO: Генерация как на кубе (ручками)
-    double x = this->length / 2;
-    double z = this->width / 2;
+    double d_x = this->length / 2;
+    double y = this->height / 2;
+    double d_z = this->width / 2;
+    double u_x = d_x + top_offset.x;
+    double u_z = d_z + top_offset.z;
     double move = 1/tan(alpha) * width; 
 
-    
+    return {  // Нижняя
+        Face({
+            {-d_x + move, -y, -d_z},
+            { d_x + move, -y, -d_z},
+            { d_x, -y,  d_z},
+            {-d_x, -y,  d_z}
+        }),
+        // Верхняя
+        Face({
+            {-u_x, y, u_z},
+            { u_x, y, u_z},
+            { u_x + move, y, -u_z},
+            {-u_x + move, y, -u_z}
+        }),
+        // Передняя
+        Face({
+            {-d_x, -y, d_z},
+            { d_x, -y, d_z},
+            { u_x,  y, u_z},
+            {-u_x,  y, u_z}
+        }),
+        // Правая
+        Face({
+            {d_x, -y,  d_z},
+            {d_x + move, -y, -d_z},
+            {u_x + move,  y, -d_z},
+            {u_x,  y,  d_z}
+        }),
+        // Задняя
+        Face({
+            { d_x + move, -y, -d_z},
+            {-d_x + move, -y, -d_z},
+            {-u_x + move,  y, -u_z},
+            { u_x + move,  y, -u_z}
+        }),
+        // Левая
+        Face({
+            {-d_x + move, -y, -d_z},
+            {-d_x, -y, d_z},
+            {-u_x,  y, u_z},
+            {-u_x + move,  y, -u_z}
+        })
+    };
 }

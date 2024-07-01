@@ -25,7 +25,6 @@ std::vector<Vector3D> Face::getVertices(){
 }
 
 double Face::getArea() {
-    // FIXME: GOVNO
     double area;
     if(is_vertices3D){
         Vector3D A = vertices3D[0];

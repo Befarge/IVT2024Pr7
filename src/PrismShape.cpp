@@ -76,7 +76,6 @@ Vector2DXZ PrismShape::getOffset(){
 
 
 double PrismShape::getSurfaceArea() {
-    // TODO: Добавить тело функции
     Face base;
     if (this->is_custom_vertices)
         base = Face(custom_vertices);
@@ -90,7 +89,6 @@ double PrismShape::getSurfaceArea() {
 }
 
 double PrismShape::getVolume() {
-    // TODO: Добавить тело функции
     Face base;
     if (this->is_custom_vertices)
         base = Face(custom_vertices);
@@ -101,7 +99,6 @@ double PrismShape::getVolume() {
 }
 
 std::vector<Face> PrismShape::getFaces() {
-    // TODO: Добавить тело функции
     std::vector<Face> kit;
 
     if (this->is_custom_vertices) {
@@ -131,9 +128,10 @@ std::vector<Face> PrismShape::getFaces() {
         kit.resize(segment_n + 2);
         double alpha = 360./segment_n;
             
-        for(int i = 0, prev_index = segment_n + 1, next_index = 2; i < segment_n; i++,
-            prev_index = 2 + (i + segment_n - 1) % segment_n,
-            next_index = 2 + (i + segment_n) % segment_n){
+        for(int i = 0, prev_index = segment_n + 1, next_index = 2;
+            i < segment_n;
+            i++, prev_index = 2 + (i + segment_n - 1) % segment_n, next_index = 2 + (i + segment_n) % segment_n)
+        {
 
             double x = int(cos((alpha * i + 180) * M_PI/180) * 100) / 100. * radius + radius;
             double z = int(sin((alpha * i + 180) * M_PI/180) * 100) / 100. * radius;
